@@ -7,7 +7,7 @@ const iframe = document.querySelector('#vimeo-player');
 
 const player = new Player(iframe);
 
-player.on('play', throttle(onPlay, 1000));
+player.on('timeupdate', throttle(onPlay, 1000));
 
 pageRecovery();
 

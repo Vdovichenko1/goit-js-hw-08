@@ -2,11 +2,14 @@ import throttle from 'lodash.throttle';
 
 const REFUGE_KEY = 'feedback-form-state';
 
-const feedbackForm = {};
+const feedbackForm = {
+  email: '',
+  textarea: '',
+};
 
 const refs = {
   form: document.querySelector('.feedback-form'),
-  mail: document.querySelector('.feedback-form input'),
+  email: document.querySelector('.feedback-form input'),
   textarea: document.querySelector('.feedback-form textarea'),
 };
 
@@ -37,7 +40,7 @@ function messageOutput() {
   const savedMessage = JSON.parse(localStorage.getItem(REFUGE_KEY));
 
   if (savedMessage) {
-    refs.textarea.value = savedMessage;
-    refs.mail.value = data.mail;
+    refs.textarea.value = savedMessage.textarea;
+    refs.email.value = savedMessage.email;
   }
 }
