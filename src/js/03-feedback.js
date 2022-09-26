@@ -46,5 +46,3 @@ function messageOutput() {
     }
   }
 }
-
-// cc
